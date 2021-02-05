@@ -133,6 +133,7 @@ function M.list_definitions_toc()
 end
 
 function M.goto_adjacent_usage(bufnr, delta)
+  delta = delta * 2
   local bufnr = bufnr or api.nvim_get_current_buf()
   local node_at_point = ts_utils.get_node_at_cursor()
   if not node_at_point then return end
